@@ -1,3 +1,22 @@
+.bell-helicopter {
+  border-radius: 400px;
+}
+.flight-locations li:first-child{
+  list-style-type: none;
+  list-style-image: url('../images/helipad-20-px.svg');
+}
+.helipad-bullet{
+  position: relative;
+  right: 151px;
+}
+.dry-lease-text{
+  color: #fed136;
+}
+.yellow-circle{
+  background-color: #fed136;
+  border-radius: 56px;
+  height: 112px;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
