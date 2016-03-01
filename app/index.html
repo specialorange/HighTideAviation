@@ -25,8 +25,8 @@
   <meta name="theme-color" content="#ffffff">
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css" />
+  <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
+  <link rel='stylesheet' href='bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css' />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -209,41 +209,43 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-2">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Locations</h4>
-          </div>
-          <div class="col-md-4 col-md-offset-2">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-heart-o fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Safety</h4>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-md-6">
-            <p class="text-muted">
-              We fly throughout the SouthWest Florida and beyond
-              <ul class="flight-locations">
-                <li>
-                  Punta Gorda (base)
-                  <!-- <img class="helipad-bullet" src="images/helipad.svg" alt="Our homebase is in Punta Gorda" height="20"> -->
-                </li>
-                <!-- From Chris McDonnell -->
-                <li>Naples</li>
-                <li>Ft Myers</li>
-                <li>Venice</li>
-                <li>Sarasota</li>
-                <li>Tampa</li>
-              </ul>
-            </p>
+            <div class="text-center">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Locations</h4>
+            </div>
+            <div>
+              <p class="text-muted">
+                We fly throughout the SouthWest Florida and beyond
+                <ul class="flight-locations">
+                  <li>
+                    Punta Gorda (base)
+                    <!-- <img class="helipad-bullet" src="images/helipad.svg" alt="Our homebase is in Punta Gorda" height="20"> -->
+                  </li>
+                  <!-- From Chris McDonnell -->
+                  <li>Naples</li>
+                  <li>Ft Myers</li>
+                  <li>Venice</li>
+                  <li>Sarasota</li>
+                  <li>Tampa</li>
+                </ul>
+              </p>
+            </div>
           </div>
           <div class="col-md-6">
-            <p class="text-muted">We pride ourself on taking every step to help protect you, our staff, and the communities we operate in.</p>
+            <div class="text-center">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-heart-o fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Safety</h4>
+            </div>
+            <div>
+              <p class="text-muted">We pride ourself on taking every step to help protect you, our staff, and the communities we operate in.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -270,7 +272,7 @@
             <div class="col-lg-12 text-center">
               <h2 class="section-heading">
                 Address:
-                <a href="https://www.google.com/maps/place/800+Catawba+St,+Belmont,+NC+28012/data=!4m2!3m1!1s0x8856bd7b20a7c843:0x4584183f343344a3?sa=X&ved=0ahUKEwjT2OHO6J3LAhUD8GMKHT1kDx0Q8gEIGzAA">800 Catawba St. Belmont, NC, 28012</a>
+                <a href="https://www.google.com/maps/place/221+Harbour+Dr,+Naples,+FL+34103/@26.181257,-81.8138567,17z/data=!3m1!4b1!4m2!3m1!1s0x88dae1d758fd10a7:0x194b4d3789241194">221 Harbour Drive, Naples, FL 34103</a>
               </h2>
             </div>
             <div class="col-lg-6">
@@ -278,25 +280,26 @@
           </div>
           <div class="row">
             <div class="col-lg-12">
-              <form name="sentMessage" id="contactForm" novalidate>
+              <!-- <form name="contactus" id="contactus" action="/contact" method="post" novalidate> -->
+              <form name="sentMessage" id="contactForm" action="/contact" method="post" novalidate>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                      <input name="name" type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
                       <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
-                      <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                      <input name="email" type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
                       <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
-                      <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                      <input name="phone" type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
                       <p class="help-block text-danger"></p>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                      <textarea name="message" class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
                       <p class="help-block text-danger"></p>
                     </div>
                   </div>
@@ -377,7 +380,9 @@
     <script src="scripts/controllers/about.js"></script>
     <script src="scripts/plugins/classie.js"></script>
     <script src="scripts/plugins/cbpAnimatedHeader.js"></script>
+    
     <script src="scripts/plugins/contact_me.js"></script>
+    
     <script src="scripts/plugins/jqBootstrapValidation.js"></script>
     <!-- endbuild -->
   </body>

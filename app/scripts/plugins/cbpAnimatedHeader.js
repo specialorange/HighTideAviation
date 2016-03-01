@@ -1,3 +1,4 @@
+"use strict";
 /**
  * cbpAnimatedHeader.js v1.0.0
  * http://www.codrops.com
@@ -41,4 +42,6 @@ var cbpAnimatedHeader = (function() {
 
 	init();
 
-})();
+});
+
+cbpAnimatedHeader();

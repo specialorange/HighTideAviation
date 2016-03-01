@@ -1,3 +1,5 @@
+"use strict";
+
 /* jqBootstrapValidation
  * A plugin for automating validation on Twitter Bootstrap formatted forms.
  *
@@ -19,14 +21,14 @@
 			preventSubmit: true, // stop the form submit event from firing if validation fails
 			submitError: false, // function called if there is an error when trying to submit
 			submitSuccess: false, // function called just before a successful submit event is sent to the server
-            semanticallyStrict: false, // set to true to tidy up generated HTML output
+      semanticallyStrict: false, // set to true to tidy up generated HTML output
 			autoAdd: {
 				helpBlocks: true
 			},
-            filter: function () {
-                // return $(this).is(":visible"); // only validate elements you can see
-                return true; // validate everything
-            }
+        filter: function () {
+          // return $(this).is(":visible"); // only validate elements you can see
+          return true; // validate everything
+        }
 		},
     methods: {
       init : function( options ) {
@@ -274,7 +276,7 @@
 
             validatorNamesToInspect = newValidatorNamesToInspect;
 
-          } while (validatorNamesToInspect.length > 0)
+          } while (validatorNamesToInspect.length > 0);
 
           // =============================================================
           //                                       SET UP VALIDATOR ARRAYS
@@ -289,8 +291,7 @@
             var foundValidator = false;
             message =
               (
-                message
-                  ? message
+                message ? message
                   : "'" + el + "' validation failed <!-- Add attribute 'data-validation-" + el.toLowerCase() + "-message' to input to change this message -->"
               )
             ;
@@ -361,8 +362,7 @@
           $helpBlock.data(
             "original-contents",
             (
-              $helpBlock.data("original-contents")
-                ? $helpBlock.data("original-contents")
+              $helpBlock.data("original-contents") ? $helpBlock.data("original-contents")
                 : $helpBlock.html()
             )
           );
@@ -370,8 +370,7 @@
           $helpBlock.data(
             "original-role",
             (
-              $helpBlock.data("original-role")
-                ? $helpBlock.data("original-role")
+              $helpBlock.data("original-role") ? $helpBlock.data("original-role")
                 : $helpBlock.attr("role")
             )
           );
@@ -379,8 +378,7 @@
           $controlGroup.data(
             "original-classes",
             (
-              $controlGroup.data("original-clases")
-                ? $controlGroup.data("original-classes")
+              $controlGroup.data("original-clases") ? $controlGroup.data("original-classes")
                 : $controlGroup.attr("class")
             )
           );
@@ -388,8 +386,7 @@
           $this.data(
             "original-aria-invalid",
             (
-              $this.data("original-aria-invalid")
-                ? $this.data("original-aria-invalid")
+              $this.data("original-aria-invalid") ? $this.data("original-aria-invalid")
                 : $this.attr("aria-invalid")
             )
           );
@@ -680,8 +677,7 @@
 					return {regex: regexFromString($this.data("validation" + name + "Regex"))};
 				},
 				validate: function ($this, value, validator) {
-					return (!validator.regex.test(value) && ! validator.negative)
-						|| (validator.regex.test(value) && validator.negative);
+					return (!validator.regex.test(value) && ! validator.negative) || (validator.regex.test(value) && validator.negative);
 				}
 			},
 			required: {
@@ -690,8 +686,7 @@
 					return {};
 				},
 				validate: function ($this, value, validator) {
-					return !!(value.length === 0  && ! validator.negative)
-						|| !!(value.length > 0 && validator.negative);
+					return !!(value.length === 0  && ! validator.negative) || !!(value.length > 0 && validator.negative);
 				},
         blockSubmit: true
 			},
@@ -705,8 +700,7 @@
 					return {"element": element};
 				},
 				validate: function ($this, value, validator) {
-					return (value !== validator.element.val() && ! validator.negative)
-						|| (value === validator.element.val() && validator.negative);
+					return (value !== validator.element.val() && ! validator.negative) || (value === validator.element.val() && validator.negative);
 				},
         blockSubmit: true
 			},
@@ -716,8 +710,7 @@
 					return {max: $this.data("validation" + name + "Max")};
 				},
 				validate: function ($this, value, validator) {
-					return (parseFloat(value, 10) > parseFloat(validator.max, 10) && ! validator.negative)
-						|| (parseFloat(value, 10) <= parseFloat(validator.max, 10) && validator.negative);
+					return (parseFloat(value, 10) > parseFloat(validator.max, 10) && ! validator.negative) || (parseFloat(value, 10) <= parseFloat(validator.max, 10) && validator.negative);
 				}
 			},
 			min: {
@@ -726,8 +719,7 @@
 					return {min: $this.data("validation" + name + "Min")};
 				},
 				validate: function ($this, value, validator) {
-					return (parseFloat(value) < parseFloat(validator.min) && ! validator.negative)
-						|| (parseFloat(value) >= parseFloat(validator.min) && validator.negative);
+					return (parseFloat(value) < parseFloat(validator.min) && ! validator.negative) || (parseFloat(value) >= parseFloat(validator.min) && validator.negative);
 				}
 			},
 			maxlength: {
@@ -736,8 +728,7 @@
 					return {maxlength: $this.data("validation" + name + "Maxlength")};
 				},
 				validate: function ($this, value, validator) {
-					return ((value.length > validator.maxlength) && ! validator.negative)
-						|| ((value.length <= validator.maxlength) && validator.negative);
+					return ((value.length > validator.maxlength) && ! validator.negative) || ((value.length <= validator.maxlength) && validator.negative);
 				}
 			},
 			minlength: {
@@ -746,8 +737,7 @@
 					return {minlength: $this.data("validation" + name + "Minlength")};
 				},
 				validate: function ($this, value, validator) {
-					return ((value.length < validator.minlength) && ! validator.negative)
-						|| ((value.length >= validator.minlength) && validator.negative);
+					return ((value.length < validator.minlength) && ! validator.negative) || ((value.length >= validator.minlength) && validator.negative);
 				}
 			},
 			maxchecked: {
@@ -760,8 +750,7 @@
 					return {maxchecked: $this.data("validation" + name + "Maxchecked"), elements: elements};
 				},
 				validate: function ($this, value, validator) {
-					return (validator.elements.filter(":checked").length > validator.maxchecked && ! validator.negative)
-						|| (validator.elements.filter(":checked").length <= validator.maxchecked && validator.negative);
+					return (validator.elements.filter(":checked").length > validator.maxchecked && ! validator.negative) || (validator.elements.filter(":checked").length <= validator.maxchecked && validator.negative);
 				},
         blockSubmit: true
 			},
@@ -775,8 +764,7 @@
 					return {minchecked: $this.data("validation" + name + "Minchecked"), elements: elements};
 				},
 				validate: function ($this, value, validator) {
-					return (validator.elements.filter(":checked").length < validator.minchecked && ! validator.negative)
-						|| (validator.elements.filter(":checked").length >= validator.minchecked && validator.negative);
+					return (validator.elements.filter(":checked").length < validator.minchecked && ! validator.negative) || (validator.elements.filter(":checked").length >= validator.minchecked && validator.negative);
 				},
         blockSubmit: true
 			}

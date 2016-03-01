@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>Page Not Found :(</title>
     <style>
+      .text-center {
+        text-align: center;
+      }
       ::-moz-selection {
         background: #b3d4fc;
         text-shadow: none;
@@ -30,7 +33,6 @@
       }
 
       body {
-        max-width: 500px;
         padding: 30px 20px 50px;
         border: 1px solid #b3b3b3;
         border-radius: 4px;
@@ -63,7 +65,6 @@
       }
 
       .container {
-        max-width: 380px;
         margin: 0 auto;
       }
 
@@ -136,17 +137,50 @@
   </head>
   <body>
     <div class="container">
-      <h1>Not found <span>:(</span></h1>
-      <p>Sorry, but the page you were trying to view does not exist.</p>
-      <p>It looks like this was the result of either:</p>
-      <ul>
-        <li>a mistyped address</li>
-        <li>an out-of-date link</li>
-      </ul>
-      <script>
-        var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-      </script>
-      <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+      <div class="text-center">
+        <img src="images/helicopter-2.svg" alt="Helicopter" height="300px">
+      </div>
+      <h1>Hovering and awaiting coordinates... </h1>
+      <p class="text-center">Sorry, but the page you were trying to view does not exist.</p>
+
+      <section id="contact" class="">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-center"><a href="/">Go Home</a></h2>
+              <h4 class="section-heading text-center">or</h4>
+              <h2 class="section-heading text-center">Contact Us Directly</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">
+                Call us :
+                <a href="tel:1-910-524-4722">1 (910) 524-4722</a>
+              </h2>
+            </div>
+            <div class="col-lg-6">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">
+                Mail us:
+                <a href="https://www.google.com/maps/place/221+Harbour+Dr,+Naples,+FL+34103/@26.181257,-81.8138567,17z/data=!3m1!4b1!4m2!3m1!1s0x88dae1d758fd10a7:0x194b4d3789241194">221 Harbour Drive, Naples, FL 34103</a>
+              </h2>
+            </div>
+            <div class="col-lg-6">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="text-center">
+        <script>
+          var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
+        </script>
+        <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+      </div>
     </div>
   </body>
 </html>
