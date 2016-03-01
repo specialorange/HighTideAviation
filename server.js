@@ -6,8 +6,11 @@ var path = require("path");
 
 var app = express();
 var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 // in latest body-parser use like below.
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -40,8 +43,8 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
 // For main page
-app.listen(80, function(){
-
+app.listen(3000, function(){
+  console.log('Server up and running at :'+ new Date);
 });
 
 
