@@ -41,9 +41,13 @@ app.use(express.static(__dirname + '/app'));
 // For the bower components to be included with the index page
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+// For Google Dev tools and streamlining and anti-hacking stuff
+app.get('/google30ac6a0ef76c4cbb',function(req,res){
+     res.sendFile('app/google30ac6a0ef76c4cbb.html');
+});
 
 // For main page
-app.listen(3000, function(){
+app.listen(8080, function(){
   console.log('Server up and running at :'+ new Date);
 });
 
