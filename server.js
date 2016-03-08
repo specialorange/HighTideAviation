@@ -42,6 +42,10 @@ app.use(express.static(__dirname + '/app'));
 // For the bower components to be included with the index page
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+app.get('/gallery',function(req,res){
+     res.sendFile(path.join(__dirname + '/app/gallery.html'));
+});
+
 // For Google Dev tools and streamlining and anti-hacking stuff
 app.get('/google30ac6a0ef76c4cbb',function(req,res){
      res.sendFile('app/google30ac6a0ef76c4cbb.html');
@@ -55,6 +59,7 @@ app.listen(8080, function(){
 
 // 404 Error
 app.use(function(req, res, next) {
+  // console.log(req);
   res.sendFile(path.join(__dirname + '/app/404.html'));
 });
 
