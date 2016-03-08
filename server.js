@@ -16,13 +16,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/contact', function (req, res) {
   var mailOpts, smtpTrans;
+  // This needs replacing with the correct information
   smtpTrans = nodemailer.createTransport('smtps://XXX%40gmail.com:XXX@smtp.gmail.com');
 
   //Mail options
   mailOpts = {
       from: req.body.email, //grab form data from the request body object
-      to: 'hightideaviation@specialorange.org',
-      subject: 'HighTide Aviation web contact information',
+      to: 'hightideaviation@gmail.com',
+      subject: 'Helicopter Services Inquiry from hightideaviation web page',
       text: 'from:'+req.body.name + '\n\n'+ req.body.message
   };
   smtpTrans.sendMail(mailOpts, function (error, response) {
