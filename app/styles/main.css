@@ -1,3 +1,7 @@
+@media (min-width: 768px)
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+  margin-left: 25px;
+}
 .well {
   min-height: 20px;
   padding: 5px;
