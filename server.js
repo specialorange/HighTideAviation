@@ -7,6 +7,8 @@ var path = require("path");
 var app = express();
 var bodyParser = require('body-parser');
 
+var oneDay = 86400000;
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -38,7 +40,7 @@ app.post('/contact', function (req, res) {
       }
   });
 });
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/app', { maxAge: oneDay }));
 // For the bower components to be included with the index page
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
